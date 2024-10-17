@@ -16,12 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
-mongoose.set("strictQuery", false);
-mongoose
-  .connect(
-    process.env.MONGODB,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+// mongoose.set("strictQuery", false);
+mongoose.connect('mongodb://127.0.0.1:27017/event_management', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
@@ -52,9 +51,7 @@ app.get("/registerUser", (req, res) => {
 app.get("/contactUs", (req, res) => {
   res.render('contact')
 })
-app.get("/about", (req, res) => {
-  res.render('about')
-})
+
 app.get("/checkevents", (req, res) => {
   eventModule.find({}).then((data) => {
     res.render("events", { event: data });

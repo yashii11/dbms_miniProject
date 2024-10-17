@@ -559,7 +559,7 @@
             <li><a href="/" class="nav-link">Home</a></li>
 
             <li><a href="#events" class="nav-link">Events</a></li>
-            <li><a href="/about" class="nav-link">Our Team</a></li>
+            
             <li>
               <a href="/contactUs" target="_blank" class="nav-link"
                 >Contact-Us</a
@@ -631,17 +631,19 @@
     </section>
     <!-- about section ends -->
     <!-- Events starts -->
+    
     <section id="events">
       <p>
         Come and grab the opportunity to prove yourselves. Check out all the
         ongoing and upcomming events here.
       </p>
+     
       <div class="events-box">
-        <% for(var i=0;i<3;i++) {%>
+        <% for(var i=0;i<event.length;i++) {%>
         <div class="events">
           <img src="<%=event[i].photo %>" />
           <div class="details">
-            <span>Date: <%=event[i].dateStart.toLocaleDateString()%></span>
+            <span>Date: <%=event[i].dateStart%></span>
             <h6><%=event[i].name%></h6>
             <% if(Currentuser!=null) { %>
             <center>
@@ -659,16 +661,20 @@
           </div>
           <div class="cost">Rs. <%=event[i].registerationFee %></div>
         </div>
-  <%} %>
+      <%} %>  
 
         
-      </div>
+      </div>   
+       
+      
+      
       <button class="expbtn">
         <a href="/checkevents"
           >Explore More <i class="fa-solid fa-forward"></i
         ></a>
       </button>
     </section>
+    
     <br /><br /><br />
     <br><br>
     <!-- Events ends -->

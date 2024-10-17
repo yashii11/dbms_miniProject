@@ -409,7 +409,7 @@
 
 
           <li><a href="#events" class="nav-link">Events</a></li>
-          <li><a href="/about" class="nav-link">Our Team</a></li>
+          
           <li><a href="/contactUs" target="_blank" class="nav-link">Contact-Us</a></li>
           <% var Currentuser=JSON.parse(localStorage.getItem("users")) %> <%
             if(Currentuser==null) { %>
@@ -445,7 +445,7 @@
           <div class="details">
             <span>Name: <%= event[i].name %></span>
            
-            <h6>Date:<%= event[i].dateStart.toLocaleDateString() %> </h6>
+            <h6>Date:<%= event[i].dateStart %> </h6>
             <% if(Currentuser!=null) { %>
               <center>
                 <button onclick="location.href='/fetchdetails/<%=event[i]._id%>'" class="regbtn">
