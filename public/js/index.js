@@ -16,7 +16,7 @@ let header=document.querySelector("header")
 
 window.addEventListener("scroll",()=>
 {
-    header.classList.toggle("header-active",window.scrollY>0)
+    // header.classList.toggle("header-active",window.scrollY>0)
 });
 
 let scrolltop=document.querySelector(".scroll-top")
